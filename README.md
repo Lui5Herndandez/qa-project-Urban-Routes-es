@@ -23,3 +23,9 @@ El proyecto está compuesto por los siguientes archivos:
 1. **Instalar Dependencias**: Asegúrate de tener instaladas todas las dependencias necesarias. Puedes instalarlas usando el siguiente comando:
    ```bash
    pip install selenium
+   
+##Configuración y Ejecución del Proyecto
+- **Clona el repositorio a tu máquina local**
+  `git clone git@github.com:username/qa-project-Urban-Routes-es.git`
+- **Ejecutar el archivo**
+  `pytest folder/archivo.py`
