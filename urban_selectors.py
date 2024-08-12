@@ -2,7 +2,7 @@ from selenium.webdriver.common.by import By
 
 
 class UrbanRoutesSelectors:
-    from_field = (By.ID, 'from')
+    from_field = (By.CSS_SELECTOR, '[id="from"]')
     to_field = (By.ID, 'to')
     order_a_taxi = (By.XPATH, "//button[@type='button' and @class='button round']")
     comfort_tariff_button = (By.XPATH, "//div[@class='tcard-title' and text()='Comfort']")

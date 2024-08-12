@@ -16,23 +16,26 @@ class TestUrbanRoutes:
     def test_set_route(self):
         self.driver.get(data.urban_routes_url)
         routes_page = UrbanRoutesPage(self.driver)
-        address_from = data.address_from
-        address_to = data.address_to
-        routes_page.set_route(address_from, address_to)
+        routes_page.set_from(data.address_from)
+        routes_page.set_to(data.address_to)
+        assert routes_page.set_from == data.address_from, (f"Expected: {data.address_from},"
+                                                             f" Actual: {routes_page.set_from}")
+        assert routes_page.set_to == data.address_to, (f"Expected: {data.address_to}, "
+                                                       f"Actual: {routes_page.set_to}")
 
     def test_order_taxi(self):
         routes_page = UrbanRoutesPage(self.driver)
         routes_page.set_from(data.address_from)
         routes_page.set_to(data.address_to)
-        routes_page.orden_a_taxi()
-        routes_page.select_comfort_tariff()
-        routes_page.set_phone_number(data.phone_number)
-        routes_page.add_card(data.card_number, data.card_code)
-        routes_page.set_message(data.message_for_driver)
-        routes_page.order_blanket_and_tissues()
-        routes_page.order_ice_cream(2)
-        routes_page.wait_for_driver_info()
-        routes_page.driver_info()
+        routes_page.test_orden_a_taxi()
+        routes_page.test_select_comfort_fare()
+        routes_page.test_fill_phone_number(data.phone_number)
+        routes_page.test_add_credit_card(data.card_number, data.card_code)
+        routes_page.test_mesagge_for_driver(data.message_for_driver)
+        routes_page.test_select_blanket_and_tissues()
+        routes_page.test_select_two_ice_cream(2)
+        routes_page.test_select_modal_taxi()
+        routes_page.test_driver_info()
 
     @classmethod
     def teardown_class(cls):
