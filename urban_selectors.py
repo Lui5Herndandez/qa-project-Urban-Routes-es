@@ -6,7 +6,9 @@ class UrbanRoutesSelectors:
     to_field = (By.ID, 'to')
     order_a_taxi = (By.XPATH, "//button[@type='button' and @class='button round']")
     comfort_tariff_button = (By.XPATH, "//div[@class='tcard-title' and text()='Comfort']")
+    comfort_select = (By.XPATH, "//div[contains(@class, 'tcard-title') and text()='Comfort']")
     phone_field = (By.XPATH, "//div[@class='np-text' and text()='Número de teléfono']")
+    confirm_phone = (By.XPATH, '//*[@id="root"]/div/div[3]/div[3]/div[2]/div[2]/div[1]/div')
     number_phone_modal = (By.XPATH, "(//div[contains(@class, 'section') and contains(@class, 'active')])[1]")
     add_number_phone = (By.XPATH, "//input[@id='phone' and @class='input' and @name='phone']")
     submit_number_phone = (By.XPATH, "//button[@type='submit' and @class='button full' and contains(text(), "
@@ -27,5 +29,7 @@ class UrbanRoutesSelectors:
     blanket_button = (By.XPATH, "//*[@id='root']/div/div[3]/div[3]/div[2]/div[2]/div[4]/div[2]/div[1]/div/div["
                                 "2]/div/span")
     ice_cream_button = (By.XPATH, "//div[@class='counter-plus']")
+    ice_cream_count = (By.XPATH, '//*[@id="root"]/div/div[3]/div[3]/div[2]/div[2]/div[4]/div[2]/div[3]/'
+                                 'div/div[2]/div[1]/div/div[2]/div/div[2]')
     search_taxi_modal = (By.XPATH, "//button[@type='button' and @class='smart-button']")
     driver_info_modal = (By.XPATH, "//div[@class='order-header-title']")
